@@ -11,15 +11,15 @@
             </p>
         </div>
         <div class=col-xl-7>
-            <div style=position:relative;margin-bottom:-60px class=ohidden data-height-xl=426 data-height-lg=567 data-height-md=470 data-height-md=287 data-height-xs=183> <img src="<?= base_url('assets/images/Slider/front.jpg'); ?>" style=position:absolute;top:0;left:0 data-animate=fadeInUp data-delay=100> </div>
+            <div style=position:relative;margin-bottom:-60px class=ohidden data-height-xl=426 data-height-lg=567 data-height-md=470 data-height-md=287 data-height-xs=183> <img src="https://cdn.maspriyambodo.com/images/slider/front.webp" style=position:absolute;top:0;left:0 data-animate=fadeInUp data-delay=100> </div>
         </div>
     </div>
     <p class="text-justify">
-                migrasikan sistem anda menjadi lebih terbaru dan memudahkan pembaruan.
-                dengan menggunakan sistem terbaru dan dukungan yang lebih unggul membuat lebih mudah dalam melakukan pembaruan sistem tanpa bergantung dengan siapapun, karena sistem yang handal adalah yang dapat dimengerti dengan mudah oleh yang mempunyai pengalaman pada bidangnya tanpa harus bergantung dengan seorang saja.
-                setiap saat, kapanpun, dimanapun dapat dengan mudah melanjutkan pekerjaan yang sudah ada. dalam setiap kasus adalah dimana ketika ingin melakukan pembaruan sangatlah sulit untuk mencari seseorang yang baru yang dapat memahami suatu pekerjaan, yang pada akhirnya hanyalah bergantung pada seorang yang telah membuatnya karena hanya dia dan tuhan yang memahami pekerjaan itu.
-                dalam suatu sistem bertujuan untuk mempermudah bukanlah untuk membuat lebih sulit pekerjaan, untuk apa dibangun sebuah sistem jika tidak dapat dikerjakan dengan mudah.
-            </p>
+        migrasikan sistem anda menjadi lebih terbaru dan memudahkan pembaruan.
+        dengan menggunakan sistem terbaru dan dukungan yang lebih unggul membuat lebih mudah dalam melakukan pembaruan sistem tanpa bergantung dengan siapapun, karena sistem yang handal adalah yang dapat dimengerti dengan mudah oleh yang mempunyai pengalaman pada bidangnya tanpa harus bergantung dengan seorang saja.
+        setiap saat, kapanpun, dimanapun dapat dengan mudah melanjutkan pekerjaan yang sudah ada. dalam setiap kasus adalah dimana ketika ingin melakukan pembaruan sangatlah sulit untuk mencari seseorang yang baru yang dapat memahami suatu pekerjaan, yang pada akhirnya hanyalah bergantung pada seorang yang telah membuatnya karena hanya dia dan tuhan yang memahami pekerjaan itu.
+        dalam suatu sistem bertujuan untuk mempermudah bukanlah untuk membuat lebih sulit pekerjaan, untuk apa dibangun sebuah sistem jika tidak dapat dikerjakan dengan mudah.
+    </p>
 </div>
 <div style="clear:both;margin:80px 0"></div>
 <div class="row bottommargin-lg common-height" id="services">
@@ -41,14 +41,16 @@
 </div>
 <div style="clear:both;margin:15px 0"></div>
 <div class="section parallax dark nomargin noborder skrollable skrollable-before" id="project"
-     style="padding:150px 0;background-image:url(<?= base_url('assets/images/Slider/3.jpg'); ?>);background-position:0 300px" 
+     style="padding:150px 0;background-image:url(https://cdn.maspriyambodo.com/images/slider/swiper/3.jpg);background-position:0 300px" 
      data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
     <div class="container center clearfix">
         <div class=emphasis-title>
             <h2 style=color:black> Want to work together ? </h2>
             <p style=font-size:20px;color:black> I'm currently accepting new projects and would love to hear about yours.
                 <br>Please take a few minutes to tell me about it. </p>
-        </div> <a href=#myModal1 data-lightbox=inline class="button button-rounded button-white button-light button-large">GET STARTED</a> </div>
+        </div>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">GET STARTED</button>
+    </div>
 </div>
 <div style="clear:both;margin:25px 0"></div>
 <div class="container clearfix" id="contact">
@@ -87,7 +89,7 @@
     <div id="image_captcha" title="the code use case sensitive" class="col_one_third" onclick="refreshCaptcha()">
         <?= $images ?>
         <a style="margin:0px 10px;" title="Refresh Code">
-            <img src="<?= base_url('assets/images/preloader-dark.gif') ?>" style="width:20px;height:20px;"/>
+            <img src="https://cdn.maspriyambodo.com/images/preloader-dark.gif" style="width:20px;height:20px;"/>
         </a>
     </div>
     <div style="clear:both;margin:10px 0px;"></div>
@@ -100,59 +102,48 @@
     </div>
     <?php echo form_close(); ?>
 </div>
-<div class="modal1 mfp-hide" id=myModal1>
-    <div class="block divcenter parallax skrollable skrollable-before" style="background-image:url(<?= base_url('assets/images/Slider/4.jpeg'); ?>)">
-        <div class=container>
-            <div class=row>
-                <div class=col-md-3> </div>
-                <div class=col-md-6>
-                    <div class=center> <img src="<?= base_url('assets/images/Logo/logo.png'); ?>" />
-                        <h3 style=color:black> Ok, just a few quick questions. </h3>
-                        <?php echo form_open(base_url('Home/SendMessage')); ?>
-                        <div class=row>
-                            <div class=col-md-6>
-                                <?php
-                                $nama = array('type' => 'text', 'value' => '', 'name' => 'nametxt', 'class' => 'sm-form-control', 'placeholder' => 'Full Name', 'required' => '');
-                                echo form_input($nama, TRUE);
-                                ?>
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-uppercase text-success">Offering Project</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="<?= base_url('Home/SendMessage/'); ?>" method="POST" accept-charset="utf-8">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="text-uppercase">Full Name <small class="text-danger">*</small></label>
+                                <input type="text" name="nametxt" class="form-control" required="" autocomplete="off">
                             </div>
-                            <div class=col-md-6>
-                                <?php
-                                $email = array('type' => 'email', 'value' => '', 'name' => 'emailtxt', 'class' => 'sm-form-control', 'placeholder' => 'Email Address', 'required' => '');
-                                echo form_input($email, TRUE);
-                                ?>
-                            </div>
-                        </div>
-                        <div style="clear:both;margin:10px 0"></div>
-                        <div class=row>
-                            <div class=col-md-6>
-                                <?php
-                                $telp = array('type' => 'tel', 'value' => '', 'name' => 'ph', 'class' => 'sm-form-control', 'placeholder' => 'Phone Number', 'required' => '');
-                                echo form_input($telp, TRUE);
-                                ?>
-                            </div>
-                            <div class=col-md-6>
-                                <?php
-                                $web = array('type' => 'url', 'value' => '', 'name' => 'website', 'class' => 'sm-form-control', 'placeholder' => 'Website');
-                                echo form_input($web, TRUE);
-                                ?>
+                            <div class="form-group">
+                                <label class="text-uppercase">Phone <small class="text-danger">*</small></label>
+                                <input type="text" name="ph" class="form-control" required="" autocomplete="off" onkeypress="return isNumber(event)" minlength="9">
                             </div>
                         </div>
-                        <div style="clear:both;margin:10px 0"></div>
-                        <div class=row>
-                            <div class=col-md-12>
-                                <?php
-                                $msg = array('type' => 'text', 'value' => '', 'name' => 'messagetxt', 'class' => 'sm-form-control', 'placeholder' => 'Tell me about your project... what is it? Why are you doing it? What do you hope to accomplish? How can I help? Timeline and budget details are also appreciated. *', 'required' => '');
-                                echo form_textarea($msg, TRUE);
-                                ?>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="text-uppercase">Email <small class="text-danger">*</small></label>
+                                <input type="email" name="emailtxt" class="form-control" required="" autocomplete="off" placeholder="name@company.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="text-uppercase">website <small class="text-danger">*</small></label>
+                                <input type="url" name="website" class="form-control" required="" autocomplete="off" placeholder="https://www.yourcompany.com">
                             </div>
                         </div>
-                        <div style="clear:both;margin:30px 0"></div>
-                        <?php echo form_submit('sendtxt', 'SUBMIT YOUR PROJECT', 'class="button button-rounded button-white button-light button-large"'); ?>
+                    </div>
+                    <textarea name="messagetxt" type="text" class="sm-form-control" placeholder="Tell me about your project... what is it? Why are you doing it? What do you hope to accomplish? How can I help? Timeline and budget details are also appreciated. *" required=""></textarea>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" name="btnsub" class="btn btn-default btn-success">Save</button>
                     </div>
                 </div>
-                <div class=col-md-3> </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>
@@ -169,5 +160,13 @@
                 alert('something error');
             }
         });
+    }
+    function isNumber(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
     }
 </script>

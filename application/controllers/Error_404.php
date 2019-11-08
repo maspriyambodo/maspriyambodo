@@ -1,19 +1,21 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH')OR exit('No direct script access allowed');
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
+/**
+ * Description of Error_404
+ *
+ * @author casug
+ */
 class Error_404 extends CI_Controller {
 
-    public function __construct() {
-        parent::__construct();
-    }
-
     function index() {
-        $data = array(
-            'heading' => 'Page not found',
-            'message' => "We're sorry, we couldn't find the page you requested."
-        );
-        $this->load->view('errors/html/error_404', $data);
+        $this->load->view('errors/html/error_404');
     }
 
 }
